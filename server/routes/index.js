@@ -1,9 +1,10 @@
-var express = require('express');
-var router = express.Router();
+import { Router } from 'express';
+
+const router = Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.send('Welcome to HelloBooks!');
+router.get('/', (req, res, next) => {
+  res.send('Yo! Welcome to HelloBooks API Page!');
 });
 
-module.exports = router;
+export default router;

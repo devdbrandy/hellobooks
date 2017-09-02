@@ -36,6 +36,15 @@
     "eslint-config-airbnb-base": "^11.3.2",
     "eslint-plugin-import": "^2.7.0",
     "gulp": "^3.9.1",
-    "jest": "^20.0.4"
+    "gulp-babel": "^7.0.0",
+    "gulp-cached": "^1.1.1",
+    "gulp-eslint": "^4.0.0",
+    "gulp-file-cache": "^0.0.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-plumber": "^1.1.0",
+    "jest": "^20.0.4",
+    "run-sequence": "^2.1.0",
+    "tiny-lr": "^1.0.5"
   }
 }
