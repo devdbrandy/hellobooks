@@ -4,9 +4,10 @@
   "description": "Hello-Books is a simple application that helps manage a library and its processes like stocking, tracking and renting books.",
   "main": "server/bin/www.js",
   "scripts": {
+    "build": "babel server -d dist",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "start": "node ./dist/bin/www",
     "start:dev": "babel-node ./server/bin/www",
-    "build": "babel server -d dist",
     "test": "jest --coverage",
     "test:watch": "jest --watch"
   },
