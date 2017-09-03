@@ -11,7 +11,7 @@ App.use(bodyParser.json());
 App.use(bodyParser.urlencoded({ extended: false }));
 
 App.use('/api', index);
-App.get('*', (req, res, next) => res.send('Home!'));
+App.get('*', (req, res, next) => res.json({ msg: 'Home Page!' }));
 
 // catch 404 and forward to error handler
 App.use((req, res, next) => {
