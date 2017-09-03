@@ -43,5 +43,4 @@ dist
 
 # others
 .yarnrc
-yarn.lock
 .jshintrc
