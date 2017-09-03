@@ -24,8 +24,7 @@ App.use((req, res, next) => {
 // error handler
 App.use((err, req, res, next) => {
   // render the error
-  res.status(err.status || 500);
-  res.json({
+  res.status(err.status).send({
     status: err.status,
     message: err.message
   });
