@@ -4,12 +4,14 @@
   "description": "Hello-Books is a simple application that helps manage a library and its processes like stocking, tracking and renting books.",
   "main": "server/bin/www.js",
   "scripts": {
-    "build": "babel server -d dist",
+    "build": "rimraf dist && babel server -d dist",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "start": "node ./dist/bin/www",
     "start:dev": "babel-node ./server/bin/www",
-    "test": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test": "eslint --fix server && jest --noStackTrace",
+    "test:cover": "jest --coverage",
+    "test:watch": "jest --watch",
+    "lint": "eslint --fix server"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,7 @@
     "body-parser": "~1.17.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
+    "dotenv": "^4.0.0",
     "express": "~4.15.2",
     "morgan": "~1.8.1"
   },
@@ -48,6 +51,7 @@
     "gulp-nodemon": "^2.2.1",
     "gulp-plumber": "^1.1.0",
     "jest": "^20.0.4",
+    "rimraf": "^2.6.1",
     "run-sequence": "^2.1.0",
     "supertest": "^3.0.0"
   }
