@@ -4,7 +4,7 @@
 /* Module dependencies */
 import debug from 'debug';
 import http from 'http';
-import App from '../app';
+import app from '../app';
 
 debug('server:server');
 
@@ -18,7 +18,7 @@ const normalizePort = (val) => {
 
 /* Get port from environment and store in Express */
 const port = normalizePort(process.env.PORT || 3000);
-App.set('port', port);
+app.set('port', port);
 
 /* Event listener for HTTP server "error" event */
 const onError = (error) => {
@@ -39,7 +39,7 @@ const onError = (error) => {
 };
 
 /* Create HTTP server */
-const server = http.createServer(App);
+const server = http.createServer(app);
 
 /* Event listener for HTTP server "listening" event */
 const onListening = () => {
