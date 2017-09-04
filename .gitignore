@@ -34,13 +34,13 @@ yarn-error.log
 package-lock.json
 npm-debug.log
 *.env
+.yarnrc
+.jshintrc
+process.yml
+master-md.md
 
 # build
 dist
 
-# cache
+# gulp cache
 .gulp-cache
-
-# others
-.yarnrc
-.jshintrc

@@ -5,11 +5,9 @@ describe('Base Route - GET /', () => {
   test('redirects to the right path', () =>
     request(app)
       .get('/')
-      .then((res) => {
-        expect(res.header.location).toBe('/api');
-      })
+      .expect('Location', '/api')
   );
-  test('should respond with message `Home!`', () =>
+  test('should respond with message `Home Page!`', () =>
     request(app)
       .get('/api')
       .set('Accept', 'application/json')
@@ -21,15 +19,21 @@ describe('Base Route - GET /', () => {
         });
       })
   );
-  test('should respond with `404 - Not Found` for invalid route', () =>
+});
+
+describe('Error Handling', () => {
+  test('should respond with status code 404 `Page Not Found` for invalid route', () =>
     request(app)
-      .get('/home')
-      .expect(404)
-      .then((res) => {
-        expect(res.body).toMatchObject({
-          status: 404,
-          message: 'Not Found'
-        });
+      .get('/404')
+      .expect(404, {
+        message: 'Page Not Found'
+      })
+  );
+  test('should respond with status code 500 - `Internal Server Error`', () =>
+    request(app)
+      .get('/500')
+      .expect(500, {
+        message: 'Internal Server Error'
       })
   );
 });
