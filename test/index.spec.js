@@ -22,14 +22,14 @@ describe('Base Route - GET /', () => {
 });
 
 describe('Error Handling', () => {
-  test('should respond statusCode with code 404 `Page Not Found` for invalid route', () =>
+  test('should respond with status code 404 `Page Not Found` for invalid route', () =>
     request(app)
       .get('/404')
       .expect(404, {
         message: 'Page Not Found'
       })
   );
-  test('should respond with statusCode 500 - `Internal Server Error`', () =>
+  test('should respond with status code 500 - `Internal Server Error`', () =>
     request(app)
       .get('/500')
       .expect(500, {
