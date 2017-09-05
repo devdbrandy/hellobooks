@@ -3,5 +3,6 @@ node_js:
   - 'node'
   - '6'
 cache: yarn
-script: yarn test
+script: yarn test:cover
+after_script: cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 notification: change
